@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الخزنة السرية</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#0b0b18] text-white p-6">
+    <div class="max-w-md mx-auto text-center">
+        <a href="index.html" class="text-pink-500 block mb-10 text-right">➡️ عودة</a>
+        
+        <div id="lock">
+            <div class="text-5xl mb-6">🔒</div>
+            <h2 class="mb-6">أدخل رمز الخزنة</h2>
+            <input type="password" id="pin" maxlength="4" class="bg-white/5 border-b-2 border-pink-500 w-32 text-center text-2xl focus:outline-none mb-8">
+            <br>
+            <button onclick="openVault()" class="bg-pink-600 px-8 py-2 rounded-full">فتح</button>
+        </div>
+
+        <div id="content" class="hidden animate-pulse">
+            <h1 class="text-pink-400 text-2xl font-bold mb-6">خزنة الأسرار ✨</h1>
+            <div class="glass p-6 rounded-3xl italic text-pink-100">
+                "أنت أعظم انتصاراتي في هذه الحياة.. أحبك دائماً وأبداً."
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openVault() {
+            const pin = document.getElementById('pin').value;
+            if(pin === "1234") { // الرمز السري هنا
+                document.getElementById('lock').classList.add('hidden');
+                document.getElementById('content').classList.remove('hidden');
+            } else {
+                alert("الرمز غير صحيح!");
+            }
+        }
+    </script>
+</body>
+</html>
